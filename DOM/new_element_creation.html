@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style ="background-color:azure;" >
+    <div class="parent">
+        <div class="days">monday</div>
+        <div class="days">tuesday
+        </div>
+        <div class="days">wednesday</div>
+        <div class="days">thursday</div>
+    </div>
+</body>
+<script>
+    let parenty = document.querySelector('.parent')
+     // this will give HTML collection 
+    // array like property so we can access it via index
+  let mychild= parenty.children
+    
+    //console.log(parenty.children.innerHTML)
+    for(let i = 0 ; i < parenty.children.length;i++){
+        console.log(parenty.children[i].textContent)
+    }
+
+
+   console.log(parenty.firstElementChild)
+   console.log(parenty.lastElementChild)
+</script>
+</html>
