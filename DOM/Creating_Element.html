@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>creating new element</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let div = document.createElement('div')   // this is creating the div
+    div.setAttribute('class' , 'div_class')
+    div.setAttribute('id' , 'div_id')
+    div.style.backgroundColor = "yellow"
+    div.style.padding = "20px"
+  
+    console.log(div)
+  let textnode =   document.createTextNode("this is the tect node creation")
+ div.appendChild(textnode)
+ document.body.appendChild(div)
+</script>
+</html>
