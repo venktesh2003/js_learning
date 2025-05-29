@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style = "background-color:grey">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+
+<script>
+    function addlanguage(lang){
+        let li = document.createElement('li')
+        li.innerText = lang
+        document.querySelector(".language").appendChild(li)
+    }
+    addlanguage("python")
+    addlanguage("java")
+
+    function add_optimize_language(lang){
+         let li = document.createElement('li')
+         li.appendChild(document.createTextNode(lang))
+         document.querySelector(".language").appendChild(li)
+    }
+    add_optimize_language("optimize java")
+    add_optimize_language("optimize python")
+
+    // Edit the value in DOM
+
+    const second_lang = document.querySelector("li:nth-child(2)")
+
+    // second_lang.innerHTML = "MOJO"  // this is fine but not optimize
+    const newli = document.createElement('li')
+    newli.textContent = "MOJO"
+    newli.style = "color:black"
+    second_lang.replaceWith(newli)
+
+    // remove the element
+    const lastlang= document.querySelector("li:last-child")
+    lastlang.remove();
+</script>
+</html>
