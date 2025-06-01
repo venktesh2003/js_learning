@@ -1,0 +1,14 @@
+.center{
+    background-position: center;
+}
+#clock{
+    background-color: yellow;
+    height: 20px;
+    width:100px
+;
+align-items: center;
+
+}
+body{
+    align-items: center;
+}
