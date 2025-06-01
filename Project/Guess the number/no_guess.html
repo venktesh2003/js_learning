@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+</head>
+<body>
+   <div class="wrapper">
+    <h1>Number Guessing</h1>
+    <p>Try and guess the number between 1 and 100</p>
+    <p>you have 10 attempts left to guess the number</p>
+   </br>
+   <form  class="form">
+    <label for="guess field" id = "guess">Guess a number</label>
+    <input type="text" name="" id="guessfield" class="guessfield">
+    <input type="submit" value="submit guess" id="subt" class = "guesssubmit">
+   </form>
+   <div class="resultParas">
+    <p>previous Guess: <span class="guesses"></span></p>
+    <p>guesses remaining : <span class = "lastResult">10</span></p>
+    <p class="loworHi"></p>
+   </div>
+   </div> 
+   <script src="noguess.js"></script>
+</body>
+</html>
