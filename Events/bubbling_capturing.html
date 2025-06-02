@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events
+    </title>
+</head>
+<body>
+    <div id = "container">
+        <ul class="images">
+           
+            <li id="coconut"><img src="coconut.jpg" alt="" >
+                ></li>
+            <li id="horse"><img src="horse.jpg" alt=""></li>
+            <li id="butterfly"><img src="butterfly.jpg" alt=""></li>
+            <li id="google"><a href="https://www.google.com/">google</a></li>
+    
+
+        </ul>
+        <div class="output"></div>
+    </div>
+</body>
+<script>
+
+// 1) bubbling   
+
+//  output will be first clicked element than parent element
+
+    document.querySelector("#coconut").addEventListener('click' , function(e){
+        let text = document.createTextNode("we clicked on coconut <br>");
+        document.querySelector('.output').appendChild(text)
+              e.stopPropagation();  // this will stop the propagation in bubbling
+    } , false)
+
+document.querySelector(".images").addEventListener('click' , function(e){
+        let text2 = document.createTextNode("we clicked on the list");
+        document.querySelector('.output').appendChild(text2)
+       
+        
+    } , false)
+  
+
+    // We dont want to do google,com
+
+    document.querySelector('.google').addEventListener('click' , function(){
+            e.preventDefault();
+    })
+
+    // 2)Capturing - output of capturing will be firs parent than come down to child
+
+//     document.querySelector("#coconut").addEventListener('click' , function(e){
+//         let text = document.createTextNode("we clicked on coconut <br>");
+//         document.querySelector('.output').appendChild(text)
+    
+//     } , true)
+
+// document.querySelector(".images").addEventListener('click' , function(e){
+//         let text2 = document.createTextNode("we clicked on the list");
+//         document.querySelector('.output').appendChild(text2)
+        
+//     } , true)
+ 
+</script>
+</html>

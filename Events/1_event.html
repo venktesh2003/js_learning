@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events
+    </title>
+</head>
+<body>
+    <div id = "container">
+        <ul class="images">
+           
+            <li id="coconut"><img src="coconut.jpg" alt="" onclick="alert('coconut is presses')"
+                ></li>
+            <li id="horse"><img src="horse.jpg" alt=""></li>
+            <li id="butterfly"><img src="butterfly.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+<script>
+// some imp events for interview
+/*type , timestamp , defaultprevented  target , toELement , srcElement
+clientx , clienty , ScreenX , ScreenY , 
+altkey , ctrlkey , shiftkey , keycode
+
+
+*/
+
+    // different ways to create the events
+      
+ // 1 is int the tag itself
+
+ document.getElementById('horse').onclick= function(){
+    alert('horse is pressed')
+ }
+
+ // 3 most feasible way
+ document.querySelector('#butterfly').addEventListener('click' , function(e){
+    console.log(e);
+    
+ }
+   ,false
+    
+
+ )
+</script>
+</html>
