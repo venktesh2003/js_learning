@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>this is Async code</h1>
+    <button id="stop">stop</button>
+
+
+</body>
+<script>
+
+ // 1) SetTimeout(function(){} , interval in millisecond )  itna time do than i will do the task = settimeout
+
+ const printname = function(){
+    console.log("my name is  venktesh");
+    document.querySelector('h1').innerHTML = "my name is  venktesh"
+ } 
+ const intervalset = setTimeout(printname, 2000)
+
+
+ // 2 clearTimeout
+
+//  clearTimeout(intervalset)
+
+ // more better
+
+ document.querySelector('#stop').addEventListener('click' ,function(){clearTimeout(intervalset)} )
+
+
+</script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>this is my Async</h1>
+<button id="stop">stop
+</button>
+
+<button id="start">start</button>
+
+<h2>This is not started<h2>
+    
+</body>
+
+<script>
+
+    
+     const saydate = function(){
+        console.log(Date.now())
+     }
+
+     setInterval(saydate , 2000)
+     // setInterval also take parameter
+
+     const saydate2 = function(str){
+        console.log(`${str} Date.now()`)
+
+     }
+
+  const inter= setInterval(saydate2 , 3000 , "hi")
+
+
+      // How to stop the interval
+      // use clearInterval(reference of set interval)
+
+      clearInterval(inter)
+
+    // SetInterval(function(){} , timeinterval in ms)    this will repeat work after every time interval
+     // the below part is not basic it is kind of good example
+   let disp= document.querySelector('h2');
+   
+   document.querySelector('#start').addEventListener('click' , function(){
+    disp.innerHTML = "this is started"
+    let interval1 = setInterval( function(){
+        let div = document.createElement('div');
+       let ele = document.createTextNode('this is in interval :' + Date.now())
+       div.appendChild(ele)
+       document.querySelector('body').appendChild(div)
+
+       document.querySelector('#stop').addEventListener('click' , function(e){
+    clearInterval(interval1)
+   })
+       
+    }, 2000)
+
+   })
+
+   
+    
+
+
+</script>
+</html>
