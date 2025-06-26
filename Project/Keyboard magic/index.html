@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is keyboard magic</title>
+</head>
+<body>
+     <div>The below you will see the output of key pressed</div>
+    <div id="block"><table><tr><th>Key</th>
+        <th>kecode</th>
+         </tr>
+</table></div>
+
+    
+</body>
+<script>
+    window.addEventListener('keypress' , (e)=>{
+        console.log(e)
+       let x =  document.createElement('div')
+       x.innerHTML =  
+
+        document.querySelector('#block').innerHTML = `<table><tr> 
+        <td>${e.key}</td>
+        <td>${e.charCode
+}</td>
+        </tr>  </table>`
+       
+        
+       
+    })
+</script>
+</html>
