@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="venktesh"></div>
+    
+</body>
+<script> 
+// xml http request
+
+//AJAX req
+
+/*
+
+Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+
+
+*/
+const request_url = "https://api.github.com/users/venktesh2003"
+let xhr  = new XMLHttpRequest()
+//console.log(xhr.readyState)
+
+xhr.open('GET' ,request_url )  // open get call when you send the reuest
+
+//console.log(xhr.readyState)  //readtstate will give you the state of request
+
+// if you want to check the continious change than use 1) request.onreadystagechange = function(){}
+
+xhr.onreadystatechange = function(){
+    console.log(xhr.readyState)
+    if(xhr.readyState === 4){
+    let data =JSON.parse(xhr.responseText)
+    console.log(typeof data)  // mosty response is in string format we need to convert it to json
+    console.log(data)
+    
+    
+}
+
+}
+xhr.send()
+
+
+
+</script>
+
+</html>
+
