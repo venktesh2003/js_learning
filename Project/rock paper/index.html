@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock paper scissors</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<div> <h1>welcome to game click on start to start the game</h1></div>
+    <div id = "game">
+        
+
+        <button id="rock"><img src="Rock.png" alt="Rock"></button>
+<button id="paper"><img src="paper.png" alt="Paper"></button>
+<button id="scissors"><img src="scissors.png" alt="Scissors"></button>
+    
+    </div>
+    <div id = "comp_score">comp score :  </div>
+    <div id = "user_score">user score : </div>
+    <div id="current"></div>
+      
+
+</body>
+<script>
+    
+    // let array = ["rock" , "paper" , "scissors"]
+   
+    // document.querySelector('#rock').addEventListener('click' , play("rock"))
+    // document.querySelector('#paper').addEventListener('click' , play("paper"))
+    // document.querySelector('#scissors').addEventListener('click' , play("scissors"))
+
+           
+    // function play(userchoice){
+    //     let userscore = 0
+    //     let compscore = 0
+    //     let user_choice = userchoice;
+        
+    //       let computer_choice = array[Math.floor(Math.random()*array.length)]
+            
+       
+    //     console.log(user_choice)
+    //         console.log(computer_choice)
+
+    //         if(user_choice === computer_choice){
+    //             document.querySelector("#current").innerHTML = "Round is tie "
+    //         }
+    //         else if(user_choice==="rock" && computer_choice==="scissors" || user_choice==="scissors" && computer_choice==="paper" || user_choice==="paper" && computer_choice==="rock"){
+    //             userscore = userscore+1
+                
+    //         }
+    //         else{
+    //             compscore = compscore+1
+    //         }
+
+
+    //         document.querySelector('#user_score').textContent = `user score : ${userscore}`
+    //         document.querySelector('#comp_score').textContent = `comp score : ${compscore}`
+    // }
+
+         
+    let array = ["rock", "paper", "scissors"];
+let userscore = 0;
+let compscore = 0;
+
+document.querySelector('#rock').addEventListener('click', () => {play("rock")});
+document.querySelector('#paper').addEventListener('click', () =>{play("paper")});
+document.querySelector('#scissors').addEventListener('click', () => {play("scissors")});
+
+function play(userchoice) {
+    let computer_choice = array[Math.floor(Math.random() * array.length)];
+
+    let resultText = `You chose: ${userchoice} | Computer chose: ${computer_choice} <br>`;
+
+    if (userchoice === computer_choice) {
+        resultText += "Round is a tie 🤝";
+    } else if (
+        (userchoice === "rock" && computer_choice === "scissors") ||
+        (userchoice === "scissors" && computer_choice === "paper") ||
+        (userchoice === "paper" && computer_choice === "rock")
+    ) {
+        userscore++;
+        resultText += "You win this round! 🎉";
+    } else {
+        compscore++;
+        resultText += "Computer wins this round! 🤖";
+    }
+
+    document.querySelector("#current").innerHTML = resultText;
+    document.querySelector('#user_score').textContent = `user score : ${userscore}`;
+    document.querySelector('#comp_score').textContent = `comp score : ${compscore}`;
+}
+   
+     
+
+    
+  </script>
+</html>
