@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button></button>
+</body>
+<script>
+class React{
+   constructor(){
+    this.library = "react"
+    this.server = "https://localhost"
+
+    // requirement
+    document.querySelector('button')
+    .addEventListener('click' , this.handleclick())  // this is of button becuase on clicking it called by button
+    //we need to bind reference of class to get accessto the variables
+
+   }
+   handleclick(){
+    console.log("button is click")
+    console.log(this)
+    console.log(this.server)  // this will not work becasue we need this is for button but you need to pass the referenc eof the class as well to recognize
+    c
+   }
+
+}
+
+
+
+
+    </script>
+</html>
